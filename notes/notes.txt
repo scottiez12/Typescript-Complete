@@ -1,0 +1,32 @@
+12.
+    Type = easy way to refer to the different properties and functions that a value has
+        --"interface" and "type" are more or less the same thing
+
+13.
+    object types and primitive types are important because you can do different things with the different categories
+
+14/15. => refer to types.ts
+
+16.
+    Type annotations and inference
+    --annotations => code we add to tell typescript what type of value a variable will refer to
+    --inference => typescript tries to figure out what type of value a variable refers to
+
+17.
+    Annotations with variables =>  variables.ts
+
+20.
+    inference
+        const color = 'red'; =>  so 'const color' is the variable declaration, and the value on the right is the variable initialization
+        so if the declaration and initialization are inline/on the same line, that's how TS infers the type for that variable
+    --!!! so if the declaration and initialization are on the same line, we'll let TS user inference, 
+            if we either A: declare a variable on one line then initialize it later, B: we want a variable to have a type that can't
+                be inferred, or C: when a function returns the 'any' type and we need to clarify the value, we're going to write our own annotations
+
+21.
+    the 'any' type
+        --a type, just like a string or a boolean
+        --TS can't figure out what it is, so it cna't check for correct prop type references
+        --basically, avoid variables with 'any' at all costs
+
+    
