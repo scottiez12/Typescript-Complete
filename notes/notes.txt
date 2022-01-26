@@ -29,4 +29,21 @@
         --TS can't figure out what it is, so it cna't check for correct prop type references
         --basically, avoid variables with 'any' at all costs
 
-    
+25.
+    more on annotations concerning functions
+        -- so TS tries to figure out what a function will return, but it doesn't do anything with the args to the function
+        -- see functions.ts   
+
+30.
+    annotations on objects
+        --objects.ts
+
+31.
+    arrays with typescript  
+        --array.ts
+
+35/37.
+    tuples in TS
+        --array-like structure where each element represents some property of a record
+        --tuples.ts
+        --in general, we won't use these much... they're kind of relevant in edge cases, but not really all that useful

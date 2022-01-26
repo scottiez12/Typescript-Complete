@@ -36,5 +36,24 @@ const logNumber: (i: number) => void = (i: number) => {
 // 1) function that returns the 'any' type
 const json = '{"x": 10, "y": 20}';
 //note that JSON.parse() could return many different types, which is why it's inherently of 'any' type
-const coordinates = JSON.parse(json);
+const coordinates: { x: number; y: number } = JSON.parse(json);
 console.log(coordinates);
+
+// 2) when we declare a variable on one line and initialize it later
+let words = ["red", "green", "blue"];
+let foundWord: boolean;
+for (let i = 0; i < words.length; i++) {
+  if (words[i] === "green") {
+    foundWord = true;
+  }
+}
+
+// 3) when a type cannot be inferred correctly
+let nums = [-10, -1, 12];
+let numberAboveZero: boolean | number = false;
+
+for (let i = 0; i > nums.length; i++) {
+  if (nums[i] > 0) {
+    numberAboveZero = nums[i];
+  }
+}
