@@ -47,3 +47,35 @@
         --array-like structure where each element represents some property of a record
         --tuples.ts
         --in general, we won't use these much... they're kind of relevant in edge cases, but not really all that useful
+
+44.
+    interfaces
+        -- interfaces.ts
+        --general strategy => create functions that accept arguments that are typed with interfaces / objects/classes can decide to implement a given interfaces
+            to work with a function (inheritance... basically.)
+
+45.
+    classes in TS   
+        -- a blueprint to create an object with some fields (values) and methods (functions) to represent a "thing"/"object"
+        -- the 'extends' keyword is how we do inheritance with TS (same as our 'class : inherits from' in C#)
+        --  can override inherited methods (like in c#), though there is no 'override' keyword or anything like that
+        -- we have access modifiers here too (public, private, protected)
+            - public: this is the 'default' for classes, method can be called anywhere at any time where class is implemented
+            - private: can only be called by other methods in this class
+            - protected: can be called by other methods in this class, or by other methods in child classes
+            -!!!!!!!! the access modifiers here go onto the FUNCTION/FIELDS (public honk():void{}), NOT the class itself
+            -!!!!!!!! modifiers cannot be changed in child classes... so if a parent class method is public, a class that inherits from it  
+                (even if it's overriding the method) can't change the method to private or protected
+        -- access modifiers on functions don't have anything to do with application security; it's for cleanliness and safety for classes to call one another
+
+49.
+    classes with inheritance
+        -- if a constructor is defined on the parent class, then the child class automatically calls that parent constructor
+            however, if the child class defines a constructor too, you have to call the 'super();' inside the child consructor and provide
+            any args you need to satisfy the parent constructor
+        -- a lot of this is pretty similar to C#; curious to see how this all integrates together though, especially in funciton component React apps
+
+
+
+
+
