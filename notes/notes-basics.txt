@@ -91,6 +91,19 @@
         -- really the main reason to do this is to get TS to show you which file has the root error (isn't implementing whatever field), instead of it just throwing an error
             on whatever component that object is used on.
 
+78.
+    concurrently/nodemon/tsconfig.json/package.json
+        -- check out those files.. nodemon and concurrently are npm packages.
+
+84.
+    type-guards
+        -- we can use this to tell typescript something of is of a certain type, when we're using a union operator for type declaration
+            ex. "constructor(public collection: number[] | string) {}" then we can use this as a type guard  if(this.collection instanceof Array){}
+        -- see /apps/sort/src/index.ts
+        -- another ex of a typeguard for string  ----if(typeof this.collection === "string"){}
+        --!!!! typeof = when you want to clarify if something is a primitive value  (boolean, number, string, and symbol)
+            instaneof = when it's any other type of value (non-primitive); based on constructor of whatever we're trying to check
+    
 
 
 
