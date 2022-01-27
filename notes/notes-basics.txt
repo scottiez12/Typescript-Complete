@@ -1,6 +1,6 @@
 12.
     Type = easy way to refer to the different properties and functions that a value has
-        --"interface" and "type" are more or less the same thing
+        -- "interface" and "type" are more or less the same thing
 
 13.
     object types and primitive types are important because you can do different things with the different categories
@@ -9,8 +9,8 @@
 
 16.
     Type annotations and inference
-    --annotations => code we add to tell typescript what type of value a variable will refer to
-    --inference => typescript tries to figure out what type of value a variable refers to
+    -- annotations => code we add to tell typescript what type of value a variable will refer to
+    -- inference => typescript tries to figure out what type of value a variable refers to
 
 17.
     Annotations with variables =>  variables.ts
@@ -25,9 +25,9 @@
 
 21.
     the 'any' type
-        --a type, just like a string or a boolean
-        --TS can't figure out what it is, so it cna't check for correct prop type references
-        --basically, avoid variables with 'any' at all costs
+        -- a type, just like a string or a boolean
+        -- TS can't figure out what it is, so it cna't check for correct prop type references
+        -- basically, avoid variables with 'any' at all costs
 
 25.
     more on annotations concerning functions
@@ -36,22 +36,22 @@
 
 30.
     annotations on objects
-        --objects.ts
+        -- objects.ts
 
 31.
     arrays with typescript  
-        --array.ts
+        -- array.ts
 
 35/37.
     tuples in TS
-        --array-like structure where each element represents some property of a record
-        --tuples.ts
-        --in general, we won't use these much... they're kind of relevant in edge cases, but not really all that useful
+        -- array-like structure where each element represents some property of a record
+        -- tuples.ts
+        -- in general, we won't use these much... they're kind of relevant in edge cases, but not really all that useful
 
 44.
     interfaces
         -- interfaces.ts
-        --general strategy => create functions that accept arguments that are typed with interfaces / objects/classes can decide to implement a given interfaces
+        -- general strategy => create functions that accept arguments that are typed with interfaces / objects/classes can decide to implement a given interfaces
             to work with a function (inheritance... basically.)
 
 45.
@@ -74,6 +74,22 @@
             however, if the child class defines a constructor too, you have to call the 'super();' inside the child consructor and provide
             any args you need to satisfy the parent constructor
         -- a lot of this is pretty similar to C#; curious to see how this all integrates together though, especially in funciton component React apps
+
+63.
+    on global imports && types
+        -- any script tag that we add to the main index.html becomes a global variable, however it has to be referenced in the components we want to use it in
+            ex. "/// <reference types="@types/google.maps" />" up with the import statements... then we get the 'google' object
+        -- syntax for types is general, but not always, "npm install @types/packageName"
+            -- 'definitely typed' is the name of the project that makes all these package type files open source
+        -- 'model.d.ts' =>  model.definitions.typescript
+
+74.
+    'implements' keyword
+        -- so to "implement" an interface on a class, use the implements keyword
+            ex. "export class User implements Mappable{}" 
+            => see User.ts and CustomMap.ts for code
+        -- really the main reason to do this is to get TS to show you which file has the root error (isn't implementing whatever field), instead of it just throwing an error
+            on whatever component that object is used on.
 
 
 
