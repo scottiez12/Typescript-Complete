@@ -130,6 +130,28 @@
             - strongly couples classes together
         -- basically, try to use interfaces first, them inheritance next
 
+107/108.
+    enums in TS
+        -- ex
+            enum MatchResult {
+                            HomeWin = "H",
+                            AwayWin = "A",
+                            Draw = "D",
+                            }
+        -- when to use/in general   
+            - near identical syntax to normal objects
+            - creates an object with the same keys and values when converted from TS to json
+            - primary goal is to signal to other engineers that these are all closely related values
+            - use whenever we have a small fixed set of values that are all closely related and known at compile time
+            - enums can be declared without values... ex Homewin, AwayWin, Draw,.... then we can assign the values later
+
+113.
+    type assertions
+        -- basically overriding TS on the type of a given value 
+        --  ex. row[5] as MatchResult, where row[5] is a string value and MatchResult is an enum
+
+
+
 
 
 
