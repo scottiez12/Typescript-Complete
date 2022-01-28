@@ -150,6 +150,12 @@
         -- basically overriding TS on the type of a given value 
         --  ex. row[5] as MatchResult, where row[5] is a string value and MatchResult is an enum
 
+118.
+    generics in ts  
+        -- like function arguments, but for tpes in class/function definitions
+        -- allows us to define the type of a property/argument/return value at a future point
+        -- used heavily when writing resuable code.
+
 
 
 
