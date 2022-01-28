@@ -1,32 +1,27 @@
-class Sorter {
-  constructor(public collection: number[] | string) {}
+import { Sorter } from "./Sorter";
+import { NumbersCollection } from "./NumbersCollection";
+import { CharactersCollection } from "./CharactersCollection";
+import { LinkedList } from "./LinkedLists";
 
-  sort(): void {
-    const { length } = this.collection;
+const numbersCollection = new NumbersCollection([10, 3, -5, 0, -20, 6, -1, 1]);
+console.log(numbersCollection.data);
+numbersCollection.sort();
+console.log(numbersCollection.data);
 
-    for (let i = 0; i < length; i++) {
-      for (let j = 0; j < length - i - 1; j++) {
-        //all of this only works if collection is numbers[]
-        //if collection is numbers
-        //this outer if statement is a type-guard
-        if (this.collection instanceof Array) {
-          if (this.collection[j] > this.collection[j + 1]) {
-            const leftSide = this.collection[j];
-            this.collection[j] = this.collection[j + 1];
-            this.collection[j + 1] = leftSide;
-          }
-        }
+console.log("---------------");
 
-        //only work if collection is string
-        //if collection is string do this logic
-        if (typeof this.collection === "string") {
-        }
-        //logic to compare and swap chars in a string
-      }
-    }
-  }
-}
+const charactersCollection = new CharactersCollection("konichiwa");
+console.log(charactersCollection.data);
+charactersCollection.sort();
+console.log(charactersCollection.data);
 
-const sorter = new Sorter([10, 3, -5, 0]);
-sorter.sort();
-console.log(sorter.collection);
+console.log("---------------------");
+const linkedList = new LinkedList();
+linkedList.add(500);
+linkedList.add(-3);
+linkedList.add(-10);
+linkedList.add(5);
+
+linkedList.print();
+linkedList.sort();
+linkedList.print();

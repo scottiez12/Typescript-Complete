@@ -1,31 +1,23 @@
 "use strict";
-class Sorter {
-    constructor(collection) {
-        this.collection = collection;
-    }
-    sort() {
-        const { length } = this.collection;
-        for (let i = 0; i < length; i++) {
-            for (let j = 0; j < length - i - 1; j++) {
-                //all of this only works if collection is numbers[]
-                //if collection is numbers
-                //this outer if statement is a type-guard
-                if (this.collection instanceof Array) {
-                    if (this.collection[j] > this.collection[j + 1]) {
-                        const leftSide = this.collection[j];
-                        this.collection[j] = this.collection[j + 1];
-                        this.collection[j + 1] = leftSide;
-                    }
-                }
-                //only work if collection is string
-                //if collection is string do this logic
-                if (typeof this.collection === "string") {
-                }
-                //logic to compare and swap chars in a string
-            }
-        }
-    }
-}
-const sorter = new Sorter([10, 3, -5, 0]);
-sorter.sort();
-console.log(sorter.collection);
+Object.defineProperty(exports, "__esModule", { value: true });
+const NumbersCollection_1 = require("./NumbersCollection");
+const CharactersCollection_1 = require("./CharactersCollection");
+const LinkedLists_1 = require("./LinkedLists");
+const numbersCollection = new NumbersCollection_1.NumbersCollection([10, 3, -5, 0, -20, 6, -1, 1]);
+console.log(numbersCollection.data);
+numbersCollection.sort();
+console.log(numbersCollection.data);
+console.log("---------------");
+const charactersCollection = new CharactersCollection_1.CharactersCollection("konichiwa");
+console.log(charactersCollection.data);
+charactersCollection.sort();
+console.log(charactersCollection.data);
+console.log("---------------------");
+const linkedList = new LinkedLists_1.LinkedList();
+linkedList.add(500);
+linkedList.add(-3);
+linkedList.add(-10);
+linkedList.add(5);
+linkedList.print();
+linkedList.sort();
+linkedList.print();

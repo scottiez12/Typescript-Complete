@@ -99,11 +99,36 @@
     type-guards
         -- we can use this to tell typescript something of is of a certain type, when we're using a union operator for type declaration
             ex. "constructor(public collection: number[] | string) {}" then we can use this as a type guard  if(this.collection instanceof Array){}
-        -- see /apps/sort/src/index.ts
+        -- see notes/typeguard
         -- another ex of a typeguard for string  ----if(typeof this.collection === "string"){}
         --!!!! typeof = when you want to clarify if something is a primitive value  (boolean, number, string, and symbol)
             instaneof = when it's any other type of value (non-primitive); based on constructor of whatever we're trying to check
     
+96.
+    abstract classes in TS  
+        -- so the problem is that when we use inheritance, the parent methods' constructor gets called in the child, but the parent method doesn't "know" if it
+            is going to have all the necessary props... it will say "hey they dont exist on this (parent) class", even though WE know that any time we're extending that class,
+            we're going to have all the necessary props.. we solve this by assigning the classes as abstract
+        -- abstract classes in ts all...
+            - can't be used to create an object directly
+            - only used as a parent class
+            - can contain real implementation for some methods
+            - the implemented methods can refer to other methods that don't actually exist yet ( we still have to provide names and types for
+                the un-implemented methods... basically as placeholders)
+            - can make child classes promise to implement some other method (similar to how we use interfaces in C#)
+        -- examples in /atts/sort/src/...
+
+99.
+    interfaces vs abstract classes
+        -- interfaces:
+            - sets up a contract between different classes
+            - use when we have very different objects that we want to work together
+            - promotes loose coupling
+        -- abstract classes (inheritance):
+            - sets up a contract between different classes
+            - use when we're trying to build up a definition of an object
+            - strongly couples classes together
+        -- basically, try to use interfaces first, them inheritance next
 
 
 
