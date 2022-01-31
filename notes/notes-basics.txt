@@ -171,7 +171,18 @@
         -- methods that can be called off the class itself...not an instance of a class
             -- the info the needs to be defined in the class... all the args and logic. 
 
+137-140.
+    Advanced/more on generics
+        -- /basics/features/generics.ts
+        -- adding constraints... import. see in above file.
 
+------------------- skipping down to section 17 react/redux with TS ----------------------------
+
+264.
+    really interesting topics here regarding state in react wiht TS
+
+265.
+    return type of functional components (most of the time) is ":JSX.Element"... interesting. Never saw that before.
 
 
 
