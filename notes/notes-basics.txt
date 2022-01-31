@@ -88,8 +88,8 @@
         -- so to "implement" an interface on a class, use the implements keyword
             ex. "export class User implements Mappable{}" 
             => see User.ts and CustomMap.ts for code
-        -- really the main reason to do this is to get TS to show you which file has the root error (isn't implementing whatever field), instead of it just throwing an error
-            on whatever component that object is used on.
+        -- really the main reason to do this is to get TS to show you which file has the root error (isn't implementing whatever field), 
+            instead of it just throwing an error on whatever component that object is used on.
 
 78.
     concurrently/nodemon/tsconfig.json/package.json
@@ -102,7 +102,7 @@
         -- see notes/typeguard
         -- another ex of a typeguard for string  ----if(typeof this.collection === "string"){}
         --!!!! typeof = when you want to clarify if something is a primitive value  (boolean, number, string, and symbol)
-            instaneof = when it's any other type of value (non-primitive); based on constructor of whatever we're trying to check
+            instanceof = when it's any other type of value (non-primitive); based on constructor of whatever we're trying to check
     
 96.
     abstract classes in TS  
@@ -149,12 +149,28 @@
     type assertions
         -- basically overriding TS on the type of a given value 
         --  ex. row[5] as MatchResult, where row[5] is a string value and MatchResult is an enum
+        -- /apps/stats/csvfilereader.ts
 
 118.
     generics in ts  
-        -- like function arguments, but for tpes in class/function definitions
+        -- like function arguments, but for types in class/function definitions
         -- allows us to define the type of a property/argument/return value at a future point
         -- used heavily when writing resuable code.
+        -- files in the "inheritance" folder
+
+125. 
+    inheritance vs composition
+        -- inheritance is using abstract classes, composition is using the interface/separate classes
+        -- inheritance => characterized by an "IS A" relationship between two classes
+            -- ex. matchReader IS A csvfilereader // wall(child) IS A rectangle(parent)
+        -- composition => characterized by an "HAS A" relationship between two classes
+            -- ex. matchReader HAS A reference to an outside object (csvfilereader)
+        
+134.
+    static methods in TS
+        -- methods that can be called off the class itself...not an instance of a class
+            -- the info the needs to be defined in the class... all the args and logic. 
+
 
 
 
